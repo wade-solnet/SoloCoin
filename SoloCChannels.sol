@@ -1,8 +1,8 @@
 pragma solidity ^0.4.18;
 
-import "./zeppelin-solidity/contracts/token/ERC20/ERC20.sol";
-import "./zeppelin-solidity/contracts/math/SafeMath.sol";
-import "./zeppelin-solidity/contracts/ECRecovery.sol";
+import "github.com/OpenZeppelin/zeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+import "github.com/OpenZeppelin/zeppelin-solidity/contracts/math/SafeMath.sol";
+import "github.com/OpenZeppelin/zeppelin-solidity/contracts/ECRecovery.sol";
 
 /**
    @title SoloCChannels, State channels for ERC20 SoloC Token

@@ -1,10 +1,10 @@
 pragma solidity ^0.4.18;
 
-import "./zeppelin-solidity/contracts/token/ERC827/ERC827Token.sol";
-import "./zeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
-import "./zeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
-import "./zeppelin-solidity/contracts/token/ERC20/BurnableToken.sol";
-import "./zeppelin-solidity/contracts/token/ERC20/PausableToken.sol";
+import "github.com/OpenZeppelin/zeppelin-solidity/contracts/token/ERC827/ERC827Token.sol";
+import "github.com/OpenZeppelin/zeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
+import "github.com/OpenZeppelin/zeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
+import "github.com/OpenZeppelin/zeppelin-solidity/contracts/token/ERC20/BurnableToken.sol";
+import "github.com/OpenZeppelin/zeppelin-solidity/contracts/token/ERC20/PausableToken.sol";
 
 /**
    @title Líf, the Winding Tree token
