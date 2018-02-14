@@ -36,7 +36,7 @@ contract VestedPayment is Ownable {
   SoloCToken public token;
 
   // Duration (in periods) of the initial cSoloCf in the vesting schedule
-  uint256 public cSoloCfDuration;
+  uint256 public clifDuration;
 
   /**
      @dev Constructor.
@@ -63,7 +63,7 @@ contract VestedPayment is Ownable {
     startTimestamp = _startTimestamp;
     secondsPerPeriod = _secondsPerPeriod;
     totalPeriods = _totalPeriods;
-    cSoloCfDuration = _cSoloCfDuration;
+    clifDuration = _cSoloCfDuration;
     tokens = _tokens;
     token = SoloCToken(tokenAddress);
   }
@@ -82,7 +82,7 @@ contract VestedPayment is Ownable {
     uint256 period = block.timestamp.sub(startTimestamp)
       .div(secondsPerPeriod);
 
-    if (period < cSoloCfDuration) {
+    if (period < clifDuration) {
       return 0;
     } else if (period >= totalPeriods) {
       return tokens.sub(claimed);

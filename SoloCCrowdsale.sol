@@ -49,7 +49,7 @@ contract SoloCCrowdsale is Ownable, Pausable {
 
   // Address of the Winding Tree Founders wallet. An extra 12.8% of tokens
   // are put in a Vested Payment with this address as beneficiary, with 1 year
-  // cSoloCf and 4 years duration.
+  // cliff and 4 years duration.
   address public foundersWallet;
 
   // TGE min cap, in USD. Converted to wei using `weiPerUSDinTGE`.
@@ -137,7 +137,7 @@ contract SoloCCrowdsale is Ownable, Pausable {
      @param _rate2 see `rate2`
      @param _foundationWallet see `foundationWallet`
    */
-  // "1518490268","1518739200","1518998400","100","110","100","0x14723a09acff6d2a60dcdf7aa4aff308fddc160c","0x583031d1113ad414f02576bd6afabfb302140225"
+  // "1518485915","1518739200","1518998400",1,11,100,"0x14723a09acff6d2a60dcdf7aa4aff308fddc160c","0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db"
   function SoloCCrowdsale(
     uint256 _startTimestamp,
     uint256 _end1Timestamp,
@@ -147,16 +147,16 @@ contract SoloCCrowdsale is Ownable, Pausable {
     uint256 _setWeiLockSeconds,
     address _foundationWallet,
     address _foundersWallet
-  ) {
+  ) {/*
 
-    /*require(_startTimestamp > block.timestamp);
+    //require(_startTimestamp > block.timestamp);
     require(_end1Timestamp > _startTimestamp);
     require(_end2Timestamp > _end1Timestamp);
     require(_rate1 > 0);
     require(_rate2 > 0);
     require(_setWeiLockSeconds > 0);
     require(_foundationWallet != address(0));
-    require(_foundersWallet != address(0));
+    require(_foundersWallet != address(0));*/
 
     token = new SoloCToken();
     token.pause();
@@ -168,7 +168,7 @@ contract SoloCCrowdsale is Ownable, Pausable {
     rate2 = _rate2;
     setWeiLockSeconds = _setWeiLockSeconds;
     foundationWallet = _foundationWallet;
-    foundersWallet = _foundersWallet;*/
+    foundersWallet = _foundersWallet;
   }
 
   /**
@@ -179,7 +179,7 @@ contract SoloCCrowdsale is Ownable, Pausable {
    */
   function setWeiPerUSDinTGE(uint256 _weiPerUSD) public onlyOwner {
     require(_weiPerUSD > 0);
-    assert(block.timestamp < startTimestamp.sub(setWeiLockSeconds));
+    //assert(block.timestamp < startTimestamp.sub(setWeiLockSeconds));
 
     weiPerUSDinTGE = _weiPerUSD;
   }
@@ -232,7 +232,7 @@ contract SoloCCrowdsale is Ownable, Pausable {
     purchases[beneficiary] = purchases[beneficiary].add(weiAmount);
     tokensSold = tokensSold.add(tokens);
 
-    token.mint(beneficiary, tokens);
+    //token.mint(beneficiary, tokens);
     TokenPurchase(msg.sender, beneficiary, weiAmount, tokens);
   }
 
@@ -259,7 +259,7 @@ contract SoloCCrowdsale is Ownable, Pausable {
 
     weiRaised = weiRaised.add(weiSent);
 
-    token.mint(beneficiary, tokens);
+    //token.mint(beneficiary, tokens);
 
     TokenPresalePurchase(beneficiary, weiSent, rate);
   }
