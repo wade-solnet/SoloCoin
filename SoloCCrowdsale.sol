@@ -3,9 +3,9 @@ pragma solidity ^0.4.18;
 import "github.com/OpenZeppelin/zeppelin-solidity/contracts/ownership/Ownable.sol";
 import "github.com/OpenZeppelin/zeppelin-solidity/contracts/lifecycle/Pausable.sol";
 import "github.com/OpenZeppelin/zeppelin-solidity/contracts/math/SafeMath.sol";
-import "github.com/wade-solnet/SoloCoin/blob/master/SoloCToken.sol";
-import "github.com/wade-solnet/SoloCoin/blob/master/VestedPayment.sol";
-import "github.com/wade-solnet/SoloCoin/blob/master/SoloCMarketValidationMechanism.sol";
+import "github.com/wade-solnet/SoloCoin/SoloCToken.sol";
+import "github.com/wade-solnet/SoloCoin/VestedPayment.sol";
+import "github.com/wade-solnet/SoloCoin/SoloCMarketValidationMechanism.sol";
 
 
 
