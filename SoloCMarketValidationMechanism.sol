@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
-import "./zeppelin-solidity/contracts/math/SafeMath.sol";
-import "./zeppelin-solidity/contracts/ownership/Ownable.sol";
+import "github.com/OpenZeppelin/zeppelin-solidity/contracts/math/SafeMath.sol";
+import "github.com/OpenZeppelin/zeppelin-solidity/contracts/ownership/Ownable.sol";
 import "github.com/wade-solnet/SoloCoin/blob/master/SoloCToken.sol";
 
 /**
